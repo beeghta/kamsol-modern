@@ -909,7 +909,7 @@ a.toggle-menu {
 /*=================== Services ==================*/
 .block-icon {
     content: "";
-    position: absolute;
+    position: relative;
     -webkit-border-radius: 50%;
     -webkit-background-clip: padding-box;
     -moz-border-radius: 50%;
@@ -926,8 +926,6 @@ a.toggle-menu {
     background-color: #E1C265;
     display: block;
     z-index: 1;
-    left: -8px;
-    top: -8px;
 }
 
 .block-iconinner {
@@ -2812,7 +2810,7 @@ h1 {
 }
 
 footer {
-    position: absolute;
+    
     background-color: #53524e;
     color: rgb(212,212,212);
     width: 100%;
@@ -3514,4 +3512,272 @@ a.toggle-menu {
 }
 .h3top {
     margin-top: -10px;
+}
+/* =========================================
+   Building Taxonomy
+   ========================================= */
+
+.taxonomy-header {
+    background: #f5f5f5;
+    padding: 60px 20px 35px;
+}
+
+.taxonomy-heading {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.taxonomy-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #d6a63a;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.taxonomy-line {
+    display: inline-block;
+    width: 70px;
+    border-top: 1px solid #d6a63a;
+}
+
+.taxonomy-heading h3 {
+    margin: 0 0 20px;
+    font-family: "FrankRuhlLibre-Bold", serif;
+    font-size: 38px;
+    color: #5a554f;
+}
+
+    .taxonomy-heading h3 span {
+        color: #d6a63a;
+    }
+
+.taxonomy-heading p {
+    margin: 0 auto;
+    max-width: 850px;
+    font-family: "Lucida Sans Unicode", sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.taxonomy-section {
+    background: #eee;
+    padding: 45px 20px 55px;
+}
+
+.taxonomy-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px 35px;
+}
+
+.taxonomy-item {
+    text-align: center;
+}
+
+.taxonomy-icon {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    border: 2px solid #d6a63a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-family: "FrankRuhlLibre-Bold", serif;
+    font-size: 20px;
+    position: relative;
+    background-color: #E1C265;
+}
+
+    .taxonomy-icon::before {
+        content: "";
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #d6a63a;
+        position: absolute;
+    }
+
+    .taxonomy-icon::after {
+        content: attr(data-code);
+        position: absolute;
+        z-index: 1;
+        color: #ffffff;
+    }
+
+.taxonomy-item h5 {
+    margin: 0 0 8px;
+    color: #544438;
+    font-family: "FrankRuhlLibre-Bold", serif;
+    font-size: 18px;
+}
+
+.taxonomy-item p {
+    margin: 0;
+    color: #544438;
+    font-family: "Lucida Sans Unicode", sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.taxonomy-error {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #ffffff;
+}
+
+
+/* Tablet */
+
+@media (max-width: 991px) {
+    .taxonomy-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 767px) {
+    .taxonomy-header {
+        padding: 45px 20px 30px;
+    }
+
+    .taxonomy-heading h3 {
+        font-size: 30px;
+    }
+
+    .taxonomy-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 20px;
+    }
+}
+
+
+/* Small mobile */
+
+@media (max-width: 480px) {
+    .taxonomy-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================
+   Real Estate Appraisal
+   ========================================= */
+
+.service-heading {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #d6a63a;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.service-line {
+    display: inline-block;
+    width: 70px;
+    border-top: 1px solid #d6a63a;
+}
+
+.service-heading h3 {
+    margin: 0 0 20px;
+    font-family: "FrankRuhlLibre-Bold", serif;
+    font-size: 38px;
+    color: #5a554f;
+}
+
+    .service-heading h3 span {
+        color: #d6a63a;
+    }
+
+.service-subtitle {
+    margin-bottom: 20px;
+    font-family: "Lucida Sans Unicode", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+.service-description {
+    margin: 0 auto 20px;
+    font-family: "Lucida Sans Unicode", sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+}
+
+
+/* Appraisal items */
+
+.appraisal-grid {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px 35px;
+}
+
+.appraisal-item {
+    text-align: center;
+}
+
+.appraisal-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    border: 2px solid #d6a63a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d6a63a;
+    font-size: 25px;
+}
+
+.appraisal-item p {
+    margin: 0 auto;
+    max-width: 280px;
+    font-family: "Lucida Sans Unicode", sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+
+/* Tablet */
+
+@media (max-width: 991px) {
+    .appraisal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .service-heading h3 {
+        font-size: 30px;
+    }
+
+    .appraisal-grid {
+        grid-template-columns: 1fr;
+    }
 }
