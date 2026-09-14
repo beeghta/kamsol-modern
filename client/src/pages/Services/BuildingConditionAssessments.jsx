@@ -5,7 +5,7 @@ import BuildingTaxonomySection from "./BuildingTaxonomySection";
 function Services() {
     return (
         <main>
-            <InnerBanner title="Building Condition Assessments" />
+            <InnerBanner breadcrumb="Our Services" title="Building Condition Assessments" />
             <BuildingConditionSection />
             <BuildingTaxonomySection />
         </main>

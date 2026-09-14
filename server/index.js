@@ -7,6 +7,7 @@ import contactRouter from "./routes/contact.js";
 import servicesRouter from "./routes/services.js";
 import buildingTaxonomyRouter from "./routes/buildingTaxonomy.js";
 import homeSectionsRouter from "./routes/homeSections.js";
+import careersRouter from "./routes/careers.js";
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(express.json());
 app.use("/api/staff", staffRouter);
 app.use("/api/contact", contactRouter);
 app.use("/api/home-sections", homeSectionsRouter);
-
+app.use("/api/careers", careersRouter);
 app.get("/", (req, res) => {
     res.json({
         message: "Kamsol API is running"

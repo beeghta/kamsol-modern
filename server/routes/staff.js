@@ -1,26 +1,21 @@
 import express from "express";
-import { staff } from "../data/staff.js";
+import db from "../config/database.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json(staff);
-});
+router.get("/", async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            "SELECT * FROM staff ORDER BY display_order ASC"
+        );
 
-router.get("/:id", (req, res) => {
-    const staffId = Number(req.params.id);
-
-    const member = staff.find(
-        (member) => member.id === staffId
-    );
-
-    if (!member) {
-        return res.status(404).json({
-            message: "Staff member not found"
+        res.json(rows);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: "Failed to fetch staff"
         });
     }
-
-    res.json(member);
 });
 
 export default router;

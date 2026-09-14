@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-function InnerBanner({ title }) {
+function InnerBanner({ title, breadcrumb }) {
     return (
         <section className="innerbanner" id="top">
             <div className="innerbannerimg"></div>
@@ -7,7 +7,7 @@ function InnerBanner({ title }) {
             <div className="status">
                 <div className="container">
                     <div className="text-left inline-block">
-                        <h4>Our Services</h4>
+                        <h4> {breadcrumb}</h4>
 
                         <span className="alink inlineflex">
                             <Link to="/">Home</Link>

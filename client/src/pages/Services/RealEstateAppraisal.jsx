@@ -23,8 +23,8 @@ function RealEstateAppraisal() {
     return (
         <main>
             {/* Page Banner */}
-            <InnerBanner title="Real Estate Appraisal" />
-
+            <InnerBanner title="Real Estate Appraisal" breadcrumb="Our Services" />
+            
 
             {/* Introduction */}
             <section className="container-fluid pt-5 pb-5 bg-light">

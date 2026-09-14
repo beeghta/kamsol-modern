@@ -6,7 +6,7 @@ import BuildingTaxonomySection from "./BuildingTaxonomySection";
 function Services() {
     return (
         <main>
-            <InnerBanner title="Our Services" />
+            <InnerBanner breadcrumb="Our Services" title="Our Services" />
             <LifeCycleSection />
             <BuildingConditionSection />
             <BuildingTaxonomySection />

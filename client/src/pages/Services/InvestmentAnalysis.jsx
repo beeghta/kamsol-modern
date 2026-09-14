@@ -4,7 +4,7 @@ function InvestmentAnalysis() {
     return (
         <main>
             {/* Page Banner */}
-            <InnerBanner title="Investment Analysis" />
+            <InnerBanner title="Investment Analysis" breadcrumb="Our Services" />
 
 
             {/* Introduction */}
