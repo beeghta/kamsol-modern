@@ -55,7 +55,7 @@ export const staffData = [
         id: 1,
         name: "Alireza Nafisi",
         position: "CRA, P. App",
-        image: "/src/img/Team/team-3.png",
+        image: "../src/img/Team/team-3.png",
         bio: "Alireza (Ali) is a certified residential appraiser with Appraisal Institute of Canada. He received his education in Real Estate Division of Sauder School of Business in UBC (University of British Colombia). Currently, he is pursuing his AACI Designation to obtain his commercial appraiser certificate. Alireza has Bachelor’s Degree in Electrical Engineering. He has Professional Engineering Designation (P. Eng) with Association of Professional Engineers and Geoscientists of Saskatchewan (APEGS). He also has PMP (Project Management Professional) designation with Project Management Institute (PMI).",
         email: "inquiries@kamsolappraisers.com",
         phone: "+1 (306) 807-1133"
@@ -65,7 +65,7 @@ export const staffData = [
         id: 2,
         name: "Atieh Madraki",
         position: "B.Eng, MEM",
-        image: "/src/img/Team/team-1.png",
+        image: "../../src/img/Team/team-1.png",
         bio: "Atieh is a Building Analyst working for KAMSOL Elite Consultants from the beginning. She has Bachelor’s Degree in Industrial Engineering. She Has Master’s Degree in Engineering Management (MEM).",
         email: "atieh.madraki@kamsolappraisers.com",
         phone: "+1 (306) 807-1133"

@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react";
-
+import InnerBanner from "./InnerBanner";
 import serviceImage from "../../img/services.png";
 
 import { buildingConditionServices } from "../../data/siteData";
@@ -29,6 +29,8 @@ function BuildingConditionSection() {
 
     return (
         <>
+            <InnerBanner title="Building Condition Assessments" breadcrumb="Our Services" />
+
             <section className="container-fluid pt-5 pb-2">
 
                 <span className="text-center col-lg-6 col-lg-offset-3">

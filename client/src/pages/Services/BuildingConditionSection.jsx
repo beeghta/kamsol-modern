@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import serviceImage from "../../img/services.png";
+import { buildingConditionServices } from "../../data/siteData";
 
 function BuildingConditionSection() {
-    const [services, setServices] = useState([]);
+    const [services, setServices] = useState(buildingConditionServices);
     const [error, setError] = useState("");
 
     useEffect(() => {
@@ -20,29 +21,13 @@ function BuildingConditionSection() {
                 setServices(data);
             } catch (error) {
                 console.error(error);
-                setError("Failed to load services");
+                setServices(buildingConditionServices);
             }
         }
 
         fetchServices();
     }, []);
-
-    if (error) {
-        return (
-            <section className="container-fluid p-y">
-                <p>{error}</p>
-            </section>
-        );
-    }
-
-    if (services.length === 0) {
-        return (
-            <section className="container-fluid p-y">
-                <p>Loading...</p>
-            </section>
-        );
-    }
-
+   
     return (
         <>
             <section className="container-fluid pt-5 pb-2">
