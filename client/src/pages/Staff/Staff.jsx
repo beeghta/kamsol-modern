@@ -24,21 +24,27 @@ function Staff() {
 
     return (
         <main>
+
             <InnerBanner
                 title="Professional Staff"
                 breadcrumb="Our Team"
             />
 
             <section className="container pb-2">
+
                 <div className="row">
+
                     {staff.map((member) => (
                         <StaffCard
                             key={member.id}
                             member={member}
                         />
                     ))}
+
                 </div>
+
             </section>
+
         </main>
     );
 }

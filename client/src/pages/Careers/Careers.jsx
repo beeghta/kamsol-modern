@@ -5,7 +5,6 @@ import { fetchPublicData } from "../../api/publicApi";
 
 function Careers() {
     const [careers, setCareers] = useState(careersData);
-    const [error, setError] = useState("");
 
     useEffect(() => {
         async function loadCareers() {
@@ -22,8 +21,9 @@ function Careers() {
 
     return (
         <main>
+
             <InnerBanner
-                title="Careers"
+                heading="Careers"
                 breadcrumb="Careers"
             />
 
@@ -41,24 +41,13 @@ function Careers() {
                     </h3>
                 </div>
 
-                {error && (
-                    <p className="text-center text-danger">
-                        {error}
-                    </p>
-                )}
-
-                {!error && careers.length === 0 && (
-                    <p className="text-center">
-                        Loading...
-                    </p>
-                )}
-
                 {/* همه آگهی‌ها */}
                 {careers.map((career) => (
                     <div key={career.id}>
 
                         {/* اطلاعات آگهی */}
                         <div className="py-4">
+
                             <div className="row">
 
                                 <h5 className="text-brown col-lg-12 FrankRuhlLibre-Bold">
@@ -96,14 +85,16 @@ function Careers() {
 
                                     <p>
                                         Website:{" "}
-                                        <a
-                                            href={career.website}
-                                            className="text-gold"
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            {career.website}
-                                        </a>
+                                        {career.website && (
+                                            <a
+                                                href={career.website}
+                                                className="text-gold"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                {career.website}
+                                            </a>
+                                        )}
                                     </p>
 
                                     <p>
@@ -118,12 +109,14 @@ function Careers() {
 
                                     <p>
                                         Contact Email:{" "}
-                                        <a
-                                            href={`mailto:${career.contact_email}`}
-                                            className="text-gold"
-                                        >
-                                            {career.contact_email}
-                                        </a>
+                                        {career.contact_email && (
+                                            <a
+                                                href={`mailto:${career.contact_email}`}
+                                                className="text-gold"
+                                            >
+                                                {career.contact_email}
+                                            </a>
+                                        )}
                                     </p>
 
                                 </div>
@@ -142,80 +135,87 @@ function Careers() {
                                 </div>
 
                             </div>
+
                         </div>
 
                         {/* Apply Now */}
-                        <div className="row text-center">
+                        {career.contact_email && (
+                            <div className="row text-center">
 
-                            <div className="col-lg-12 col-xs-12">
+                                <div className="col-lg-12 col-xs-12">
 
-                                <a
-                                    href={`mailto:${career.contact_email}`}
-                                    className="btn-kamsol"
-                                >
-                                    Apply Now
-                                    <i className="fa fa-angle-right"></i>
-                                </a>
+                                    <a
+                                        href={`mailto:${career.contact_email}`}
+                                        className="btn-kamsol"
+                                    >
+                                        Apply Now
+                                        <i className="fa fa-angle-right"></i>
+                                    </a>
+
+                                </div>
 
                             </div>
-
-                        </div>
+                        )}
 
                         {/* Competencies */}
-                        <div className="row">
+                        {career.competencies?.length > 0 && (
+                            <div className="row">
 
-                            <div className="col-lg-12 left-border-gold text-justify pl-5 font-14 m-y-2 text-dark-gray pt-2">
+                                <div className="col-lg-12 left-border-gold text-justify pl-5 font-14 m-y-2 text-dark-gray pt-2">
 
-                                <h4 className="pb-2">
-                                    Competencies and other requirements
-                                </h4>
+                                    <h4 className="pb-2">
+                                        Competencies and other requirements
+                                    </h4>
 
-                                <ul>
-                                    {career.competencies?.map((item) => (
-                                        <li
-                                            key={item.id}
-                                            className="col-lg-12"
-                                        >
-                                            <i className="fa fa-circle text-gold iwi"></i>
+                                    <ul>
+                                        {career.competencies.map((item, index) => (
+                                            <li
+                                                key={item.id ?? index}
+                                                className="col-lg-12"
+                                            >
+                                                <i className="fa fa-circle text-gold iwi"></i>
 
-                                            <span className="text-dark-gray pl-2">
-                                                {item.content}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                                <span className="text-dark-gray pl-2">
+                                                    {item.content ?? item}
+                                                </span>
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                </div>
 
                             </div>
-
-                        </div>
+                        )}
 
                         {/* Job Tasks */}
-                        <div className="row">
+                        {career.tasks?.length > 0 && (
+                            <div className="row">
 
-                            <div className="col-lg-6 left-border-gold text-justify pl-5 font-14 m-y-2 text-dark-gray p-y bg-light">
+                                <div className="col-lg-6 left-border-gold text-justify pl-5 font-14 m-y-2 text-dark-gray p-y bg-light">
 
-                                <h4 className="pb-2">
-                                    Job Tasks
-                                </h4>
+                                    <h4 className="pb-2">
+                                        Job Tasks
+                                    </h4>
 
-                                <ul>
-                                    {career.tasks?.map((item) => (
-                                        <li
-                                            key={item.id}
-                                            className="col-lg-12"
-                                        >
-                                            <i className="fa fa-circle text-gold iwi"></i>
+                                    <ul>
+                                        {career.tasks.map((item, index) => (
+                                            <li
+                                                key={item.id ?? index}
+                                                className="col-lg-12"
+                                            >
+                                                <i className="fa fa-circle text-gold iwi"></i>
 
-                                            <span className="text-dark-gray pl-2">
-                                                {item.content}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                                <span className="text-dark-gray pl-2">
+                                                    {item.content ?? item}
+                                                </span>
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                </div>
 
                             </div>
-
-                        </div>
+                        )}
 
                     </div>
                 ))}
@@ -247,6 +247,7 @@ function Careers() {
                 </div>
 
             </section>
+
         </main>
     );
 }

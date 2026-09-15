@@ -34,6 +34,23 @@
 };
 
 
+export const buildingConditionServices = [
+    {
+        id: 1,
+        title: "Building Valuation Models",
+        description:
+            "Create Building Valuation Models (cost per square) and estimate the cost of current replacement value of buildings as well as building elements."
+    },
+
+    {
+        id: 2,
+        title: "Capital Expenditure - TEST",
+        description:
+            "Create Building Valuation Models (cost per square) and estimate the cost of current replacement value of buildings as well as building elements."
+    }
+];
+
+
 export const staffData = [
     {
         id: 1,
@@ -126,6 +143,7 @@ export const careersData = [
         ]
     }
 ];
+
 
 export const buildingTaxonomyData = [
     {
