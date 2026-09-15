@@ -37,10 +37,7 @@ function Sidebar() {
                     Home
                 </NavLink>
 
-                <NavLink to="/admin/services">
-                    <i className="fa fa-cogs"></i>
-                    Services
-                </NavLink>
+                
 
                 <NavLink to="/admin/staff">
                     <i className="fa fa-users"></i>
@@ -52,10 +49,7 @@ function Sidebar() {
                     Careers
                 </NavLink>
 
-                <NavLink to="/admin/building-taxonomy">
-                    <i className="fa fa-building"></i>
-                    Building Taxonomy
-                </NavLink>
+                
 
                 <div className="admin-nav-label">
                     MESSAGES
