@@ -10,7 +10,7 @@ A modern full-stack rebuild of a legacy PHP/MySQL website using React, Node.js, 
 
 
 
-\[View the live website](https://kamsol-modern.vercel.app/)
+https://kamsol-modern.vercel.app/
 
 
 
@@ -102,22 +102,26 @@ kamsol-modern/
 
 └── database/
 
-\&#x20;   └── database files
+       └── database files
 
 ```
 
+
+
 **Features**
 
-\* Public Website
-\* Home page
-\* About page
-\* Services
-\* Real Estate Appraisal
-\* Building Condition Assessments
-\* Investment Analysis
-\* Professional Staff
-\* Careers
-\* Contact page
+
+* Public Website
+* Home page
+* About page
+* Services
+* Real Estate Appraisal
+* Building Condition Assessments
+* Investment Analysis
+* Professional Staff
+* Careers
+* Contact page
+
 
 
 
@@ -200,15 +204,15 @@ This project modernizes the application by introducing:
 
 Legacy PHP/MySQL
 
-\&#x20;       ↓
+      ↓
 
 React Frontend
 
-\&#x20;       +
+      +
 
 Node.js / Express API
 
-\&#x20;       +
+      +
 
 MySQL Database
 
