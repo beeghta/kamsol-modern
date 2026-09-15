@@ -108,20 +108,10 @@ kamsol-modern/
 
 
 
+
+
 **Features**
-
-
-* Public Website
-* Home page
-* About page
-* Services
-* Real Estate Appraisal
-* Building Condition Assessments
-* Investment Analysis
-* Professional Staff
-* Careers
-* Contact page
-
+---
 
 
 
@@ -134,19 +124,14 @@ Current content management includes:
 
 
 
-Staff management
+* Staff management
+* Services management
+* Home page content
+* Careers
+* Contact messages
+* CRUD operations
+* Backend API
 
-Services management
-
-Home page content
-
-Careers
-
-Contact messages
-
-CRUD operations
-
-Backend API
 
 
 
@@ -156,17 +141,13 @@ The frontend communicates with the Node.js/Express backend through REST API endp
 
 Examples include:
 
-/api/services
+* /api/services
+* /api/staff
+* /api/home-sections
+* /api/careers
+* /api/contact
+* /api/building-taxonomy
 
-/api/staff
-
-/api/home-sections
-
-/api/careers
-
-/api/contact
-
-/api/building-taxonomy
 
 
 
@@ -204,15 +185,12 @@ This project modernizes the application by introducing:
 
 Legacy PHP/MySQL
 
-      ↓
 
 React Frontend
 
-      +
 
 Node.js / Express API
 
-      +
 
 MySQL Database
 
@@ -249,14 +227,17 @@ node index.js
 The frontend runs through Vite and the backend provides the REST API.
 
 
-
 Future Improvements
+---
 
-\* Expand the content management system
-\* Improve authentication and authorization
-\* Further separate reusable content structures
-\* Add additional automated testing
-\* Improve deployment architecture
+
+
+* Expand the content management system
+* Improve authentication and authorization
+* Further separate reusable content structures
+* Add additional automated testing
+* Improve deployment architecture
+
 
 
 **License**
