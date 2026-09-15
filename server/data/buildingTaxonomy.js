@@ -1,3 +1,4 @@
+﻿
 export const buildingTaxonomy = [
     {
         id: 1,

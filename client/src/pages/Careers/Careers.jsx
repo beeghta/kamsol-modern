@@ -1,31 +1,23 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import InnerBanner from "../Services/InnerBanner";
+import { careersData } from "../../data/siteData";
+import { fetchPublicData } from "../../api/publicApi";
 
 function Careers() {
-    const [careers, setCareers] = useState([]);
+    const [careers, setCareers] = useState(careersData);
     const [error, setError] = useState("");
 
     useEffect(() => {
-        async function fetchCareers() {
-            try {
-                const response = await fetch(
-                    "http://localhost:3001/api/careers"
-                );
+        async function loadCareers() {
+            const data = await fetchPublicData(
+                "/careers",
+                careersData
+            );
 
-                if (!response.ok) {
-                    throw new Error("Failed to fetch careers");
-                }
-
-                const data = await response.json();
-
-                setCareers(data);
-            } catch (error) {
-                console.error(error);
-                setError("Unable to load career information.");
-            }
+            setCareers(data);
         }
 
-        fetchCareers();
+        loadCareers();
     }, []);
 
     return (
