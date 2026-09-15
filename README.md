@@ -2,7 +2,15 @@
 
 
 
-A modern full-stack rebuild of a legacy PHP/MySQL website using React, Node.js, Express and MySQL.
+A full-stack modernization of a website that I originally designed and developed using PHP and MySQL.
+
+
+
+After several years, I decided to rebuild the project using a modern JavaScript-based stack, including React, Node.js, Express and MySQL.
+
+
+
+
 
 
 
@@ -18,7 +26,15 @@ https://kamsol-modern.vercel.app/
 
 
 
-This project is a modernization of an existing website originally developed with PHP and MySQL.
+Kamsol is a real-world website that I originally developed using PHP, MySQL, HTML, CSS, JavaScript and Bootstrap.
+
+
+
+This repository contains the modernized version of that project.
+
+
+
+Rather than creating a new website from scratch, I used my original project as the foundation and rebuilt its frontend and backend using a modern application architecture.
 
 
 
@@ -174,10 +190,28 @@ Careers
 Contact messages
 
 Website Modernization
+---
+
+
+The modernization includes:
 
 
 
-The original website was developed using a traditional PHP/MySQL architecture.
+\- Rebuilding the frontend with React
+
+\- Developing a REST API with Node.js and Express
+
+\- Integrating MySQL for dynamic content
+
+\- Creating reusable React components
+
+\- Implementing CRUD operations
+
+\- Developing an administration interface
+
+\- Connecting frontend components to backend APIs
+
+\- Preserving the original visual identity and content structure
 
 
 
@@ -185,17 +219,14 @@ This project modernizes the application by introducing:
 
 Legacy PHP/MySQL
 
-
 React Frontend
 
-
 Node.js / Express API
-
 
 MySQL Database
 
 The modernization process focuses on improving the application's structure, component reusability, API integration and maintainability while keeping the original visual design and content direction.
-
+This project also reflects my transition from traditional PHP-based web development toward modern JavaScript and full-stack development.
 
 
 Development
