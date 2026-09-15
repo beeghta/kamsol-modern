@@ -1,14 +1,17 @@
 ﻿import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
+import aboutHome from "../../img/about-home.png";
 import { homeSections } from "../../data/siteData";
 import { fetchPublicData } from "../../api/publicApi";
 
 function AppraisalSection() {
+
     const [content, setContent] = useState(homeSections.appraisal);
 
     useEffect(() => {
+
         async function loadContent() {
+
             const data = await fetchPublicData(
                 "/home-sections/appraisal",
                 homeSections.appraisal
@@ -18,14 +21,14 @@ function AppraisalSection() {
         }
 
         loadContent();
+
     }, []);
 
     return (
-        <div
-            className="container-fluid p-y"
-            style={{ backgroundColor: "#1e1d1d" }}
-        >
+        <section className="container-fluid p-y home-appraisal">
+
             <div className="col-lg-6 bg-black">
+
                 <span className="col-lg-2 col-xs-4 middle">
                     <hr width="90" className="hr-gold" />
                 </span>
@@ -46,24 +49,30 @@ function AppraisalSection() {
                 </p>
 
                 <div className="col-lg-12 col-xs-7 pt-5">
-                    <Link
-                        to={content.button_link}
+
+                    <a
+                        href={content.button_link}
                         className="btn-kamsol py-2 m-y-2"
                     >
                         {content.button_text}
                         <i className="fa fa-angle-right"></i>
-                    </Link>
+                    </a>
+
                 </div>
+
             </div>
 
             <div className="col-lg-6 p-x-2">
+
                 <img
-                    src="/images/about-home.png"
+                    src={aboutHome}
                     width="87%"
-                    alt="Kamsol Real Estate Appraisal"
+                    alt={content.title}
                 />
+
             </div>
-        </div>
+
+        </section>
     );
 }
 

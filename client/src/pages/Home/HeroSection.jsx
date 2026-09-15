@@ -1,55 +1,41 @@
-﻿import { useEffect, useState } from "react";
+﻿import ScrollReveal from "../../components/ScrollReveal";
 
-import CustomerLogos from "../../components/CustomerLogos";
-import { homeSections } from "../../data/siteData";
-import { fetchPublicData } from "../../api/publicApi";
-
-function ServicesSection() {
-    const [content, setContent] = useState(homeSections.services);
-
-    useEffect(() => {
-        async function loadContent() {
-            const data = await fetchPublicData(
-                "/home-sections/services",
-                homeSections.services
-            );
-
-            setContent(data);
-        }
-
-        loadContent();
-    }, []);
-
+function HeroSection() {
     return (
-        <section className="container-fluid bg-white p-y">
-            <span className="text-center col-lg-6 col-lg-offset-3">
-                <span className="col-lg-2 col-xs-4 middle col-lg-offset-3">
-                    <hr width="90" className="hr-gold" />
-                </span>
+        <section className="banner" id="top">
 
-                <span className="col-lg-4 col-xs-5 text-gold little-title">
-                    {content.eyebrow}
-                </span>
-            </span>
+            <div className="bannerimg"></div>
 
-            <span className="col-lg-6 col-lg-offset-3 col-xs-12">
-                <h3 className="text-brown text-center col-lg-12 FrankRuhlLibre-Bold h3top">
-                    {content.title}{" "}
-                    <span className="text-gold">
-                        {content.title_highlight}
-                    </span>
-                </h3>
+            <div className="status">
+                <div className="container">
 
-                <p className="col-lg-12 text-center font-14 m-y-2 text-dark-gray">
-                    {content.description}
-                </p>
-            </span>
+                    <div className="text-center">
 
-            <div className="col-lg-12">
-                <CustomerLogos />
+                        <ScrollReveal>
+                            <h2>KAMSOL Elite</h2>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={300}>
+                            <h3>Consultants Inc</h3>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={800}>
+                            <a
+                                href="tel:+13068071133"
+                                className="gold-btn mt-2"
+                            >
+                                Let's get started
+                                <i className="fa fa-angle-right py-2"></i>
+                            </a>
+                        </ScrollReveal>
+
+                    </div>
+
+                </div>
             </div>
+
         </section>
     );
 }
 
-export default ServicesSection;
+export default HeroSection;
