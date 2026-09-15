@@ -1,29 +1,25 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
+
+import { buildingTaxonomyData } from "../../data/siteData";
+import { fetchPublicData } from "../../api/publicApi";
 
 function BuildingTaxonomySection() {
-    const [taxonomy, setTaxonomy] = useState([]);
+    const [taxonomy, setTaxonomy] = useState(
+        buildingTaxonomyData
+    );
     const [error, setError] = useState("");
 
     useEffect(() => {
-        async function fetchTaxonomy() {
-            try {
-                const response = await fetch(
-                    "http://localhost:3001/api/building-taxonomy"
-                );
+        async function loadTaxonomy() {
+            const data = await fetchPublicData(
+                "/building-taxonomy",
+                buildingTaxonomyData
+            );
 
-                if (!response.ok) {
-                    throw new Error("Failed to fetch building taxonomy");
-                }
-
-                const data = await response.json();
-                setTaxonomy(data);
-            } catch (error) {
-                console.error(error);
-                setError("Unable to load building taxonomy.");
-            }
+            setTaxonomy(data);
         }
 
-        fetchTaxonomy();
+        loadTaxonomy();
     }, []);
 
     return (
