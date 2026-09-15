@@ -101,13 +101,31 @@ export const careersData = [
         contact_city: "",
         contact_province: "",
         contact_email: "",
+
         job_description:
             "KAMSOL Elite Consultants is always interested in hearing from talented professionals.",
-        competencies: [],
-        tasks: []
+
+        competencies: [
+            "The ability to work autonomously, remotely, and meet deadlines.",
+            "The ability to communicate to a wide-ranged audience: Strong Customer Service Skills; (Written & Verbal)",
+            "Experience with Appraisal Report Writing, Property Inspections, Onsite Data Collection.",
+            "The ability to work with different technologies, maintaining records and strong organization skills.",
+            "Be a member of the Appraisal Institute of Canada in good standing as a Candidate or CRA Appraiser, with valid relevant E & O Insurance.",
+            "Applicants must have successfully completed AIC 101, BUSI 330.",
+            "A valid driver's license and reliable car are required with valid and relevant car insurance and package policy.",
+            "Good time management skills, and computer literate.",
+            "Be highly motivated and possess a strong work ethics."
+        ],
+
+        tasks: [
+            "Collect data through onsite property inspections, photograph properties.",
+            "Utilize Valuation Theory: Highest & Best Use, Sales Comparison, Cost & Income approaches.",
+            "Communicate with property owners, occupants, tenants, builders, and real estate agents in person, over the phone or electronically.",
+            "Visit new construction sites to review builder plans.",
+            "Prepare and Submit Appraisal Reports for Processing."
+        ]
     }
 ];
-
 
 export const buildingTaxonomyData = [
     {
