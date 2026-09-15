@@ -2,32 +2,30 @@ import { useEffect, useState } from "react";
 import InnerBanner from "../Services/InnerBanner";
 
 function Careers() {
-    const [career, setCareer] = useState(null);
+    const [careers, setCareers] = useState([]);
     const [error, setError] = useState("");
 
     useEffect(() => {
-        async function fetchCareer() {
+        async function fetchCareers() {
             try {
                 const response = await fetch(
                     "http://localhost:3001/api/careers"
                 );
 
                 if (!response.ok) {
-                    throw new Error("Failed to fetch career");
+                    throw new Error("Failed to fetch careers");
                 }
 
                 const data = await response.json();
 
-                if (data.length > 0) {
-                    setCareer(data[0]);
-                }
+                setCareers(data);
             } catch (error) {
                 console.error(error);
                 setError("Unable to load career information.");
             }
         }
 
-        fetchCareer();
+        fetchCareers();
     }, []);
 
     return (
@@ -57,14 +55,16 @@ function Careers() {
                     </p>
                 )}
 
-                {!error && !career && (
+                {!error && careers.length === 0 && (
                     <p className="text-center">
                         Loading...
                     </p>
                 )}
 
-                {career && (
-                    <>
+                {/* همه آگهی‌ها */}
+                {careers.map((career) => (
+                    <div key={career.id}>
+
                         {/* اطلاعات آگهی */}
                         <div className="py-4">
                             <div className="row">
@@ -224,8 +224,9 @@ function Careers() {
                             </div>
 
                         </div>
-                    </>
-                )}
+
+                    </div>
+                ))}
 
             </section>
 

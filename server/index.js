@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import authRouter from "./routes/auth.js";
 import db from "./config/database.js";
 import staffRouter from "./routes/staff.js";
 import contactRouter from "./routes/contact.js";
@@ -13,16 +14,17 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use("/api/staff", staffRouter);
-app.use("/api/contact", contactRouter);
-app.use("/api/home-sections", homeSectionsRouter);
-app.use("/api/careers", careersRouter);
+
 app.get("/", (req, res) => {
     res.json({
         message: "Kamsol API is running"
     });
 });
-
+app.use("/api/auth", authRouter);
+app.use("/api/staff", staffRouter);
+app.use("/api/contact", contactRouter);
+app.use("/api/home-sections", homeSectionsRouter);
+app.use("/api/careers", careersRouter);
 app.use("/api/services", servicesRouter);
 app.use("/api/building-taxonomy", buildingTaxonomyRouter);
 

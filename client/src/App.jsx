@@ -1,19 +1,24 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Contact from "./pages/Contact/Contact";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import About from "./pages/About/About";
+
 import Home from "./pages/Home/Home";
 import Services from "./pages/Services/Services";
 import RealEstateAppraisal from "./pages/Services/RealEstateAppraisal";
 import BuildingConditionAssessments from "./pages/Services/BuildingConditionAssessments";
 import InvestmentAnalysis from "./pages/Services/InvestmentAnalysis";
 import Staff from "./pages/Staff/Staff";
+import Contact from "./pages/Contact/Contact";
+import About from "./pages/About/About";
 import Careers from "./pages/Careers/Careers";
 
-function App() {
+import AdminApp from "./admin/AdminApp";
+import "./admin/styles/admin.css";
+
+function PublicLayout() {
     return (
-        <BrowserRouter>
+        <>
             <Navbar />
 
             <Routes>
@@ -35,12 +40,41 @@ function App() {
                     path="/professional-staff"
                     element={<Staff />}
                 />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/careers" element={<Careers />} />
+                <Route
+                    path="/contact"
+                    element={<Contact />}
+                />
+                <Route
+                    path="/about"
+                    element={<About />}
+                />
+                <Route
+                    path="/careers"
+                    element={<Careers />}
+                />
             </Routes>
 
             <Footer />
+        </>
+    );
+}
+
+function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+
+                <Route
+                    path="/admin/*"
+                    element={<AdminApp />}
+                />
+
+                <Route
+                    path="/*"
+                    element={<PublicLayout />}
+                />
+
+            </Routes>
         </BrowserRouter>
     );
 }

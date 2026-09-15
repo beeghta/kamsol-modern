@@ -1,56 +1,47 @@
 import express from "express";
 import db from "../config/database.js";
+import { authenticateAdmin } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
+// GET — public + admin
 router.get("/", async (req, res) => {
     try {
         const [rows] = await db.query(
-            "SELECT * FROM services"
+            `SELECT *
+             FROM services
+             ORDER BY id ASC`
         );
 
         res.json(rows);
     } catch (error) {
         console.error(error);
-
         res.status(500).json({
             message: "Failed to fetch services"
         });
     }
 });
-router.get("/:id", (req, res) => {
-    const serviceId = Number(req.params.id);
 
-    const service = services.find(
-        (service) => service.id === serviceId
-    );
+// POST — admin only
+router.post("/", authenticateAdmin, async (req, res) => {
+    const {
+        category,
+        title,
+        description
+    } = req.body;
 
-    if (!service) {
-        return res.status(404).json({
-            message: "Service not found"
+    if (!category || !title || !description) {
+        return res.status(400).json({
+            message: "Category, title and description are required"
         });
     }
 
-    res.json(service);
-});
-router.post("/", async (req, res) => {
     try {
-        const { category, title, description } = req.body;
-
-        if (!title || !description) {
-            return res.status(400).json({
-                message: "Title and description are required"
-            });
-        }
-
         const [result] = await db.query(
-            `INSERT INTO services (category, title, description)
+            `INSERT INTO services
+             (category, title, description)
              VALUES (?, ?, ?)`,
-            [
-                category || "General",
-                title,
-                description
-            ]
+            [category, title, description]
         );
 
         const [rows] = await db.query(
@@ -59,36 +50,38 @@ router.post("/", async (req, res) => {
         );
 
         res.status(201).json(rows[0]);
-
     } catch (error) {
         console.error(error);
-
         res.status(500).json({
             message: "Failed to create service"
         });
     }
 });
-router.put("/:id", async (req, res) => {
+
+// PUT — admin only
+router.put("/:id", authenticateAdmin, async (req, res) => {
+    const { id } = req.params;
+
+    const {
+        category,
+        title,
+        description
+    } = req.body;
+
+    if (!category || !title || !description) {
+        return res.status(400).json({
+            message: "Category, title and description are required"
+        });
+    }
+
     try {
-        const serviceId = Number(req.params.id);
-        const { category, title, description } = req.body;
-
-        if (!title || !description) {
-            return res.status(400).json({
-                message: "Title and description are required"
-            });
-        }
-
         const [result] = await db.query(
             `UPDATE services
-             SET category = ?, title = ?, description = ?
+             SET category = ?,
+                 title = ?,
+                 description = ?
              WHERE id = ?`,
-            [
-                category,
-                title,
-                description,
-                serviceId
-            ]
+            [category, title, description, id]
         );
 
         if (result.affectedRows === 0) {
@@ -99,26 +92,26 @@ router.put("/:id", async (req, res) => {
 
         const [rows] = await db.query(
             "SELECT * FROM services WHERE id = ?",
-            [serviceId]
+            [id]
         );
 
         res.json(rows[0]);
-
     } catch (error) {
         console.error(error);
-
         res.status(500).json({
             message: "Failed to update service"
         });
     }
 });
-router.delete("/:id", async (req, res) => {
-    try {
-        const serviceId = Number(req.params.id);
 
+// DELETE — admin only
+router.delete("/:id", authenticateAdmin, async (req, res) => {
+    const { id } = req.params;
+
+    try {
         const [result] = await db.query(
             "DELETE FROM services WHERE id = ?",
-            [serviceId]
+            [id]
         );
 
         if (result.affectedRows === 0) {
@@ -130,13 +123,12 @@ router.delete("/:id", async (req, res) => {
         res.json({
             message: "Service deleted successfully"
         });
-
     } catch (error) {
         console.error(error);
-
         res.status(500).json({
             message: "Failed to delete service"
         });
     }
 });
+
 export default router;
