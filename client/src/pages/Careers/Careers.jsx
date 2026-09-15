@@ -23,7 +23,7 @@ function Careers() {
         <main>
 
             <InnerBanner
-                heading="Careers"
+                title="Careers"
                 breadcrumb="Careers"
             />
 

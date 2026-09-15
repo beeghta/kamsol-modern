@@ -50,14 +50,13 @@ export const buildingConditionServices = [
     }
 ];
 
-
 export const staffData = [
     {
         id: 1,
         name: "Alireza Nafisi",
         position: "CRA, P. App",
-        image: "/images/team/team-3.png",
-        bio: "",
+        image: "/src/img/Team/team-3.png",
+        bio: "Alireza (Ali) is a certified residential appraiser with Appraisal Institute of Canada. He received his education in Real Estate Division of Sauder School of Business in UBC (University of British Colombia). Currently, he is pursuing his AACI Designation to obtain his commercial appraiser certificate. Alireza has Bachelor’s Degree in Electrical Engineering. He has Professional Engineering Designation (P. Eng) with Association of Professional Engineers and Geoscientists of Saskatchewan (APEGS). He also has PMP (Project Management Professional) designation with Project Management Institute (PMI).",
         email: "inquiries@kamsolappraisers.com",
         phone: "+1 (306) 807-1133"
     },
@@ -66,8 +65,8 @@ export const staffData = [
         id: 2,
         name: "Atieh Madraki",
         position: "B.Eng, MEM",
-        image: "/images/team/team-1.png",
-        bio: "",
+        image: "/src/img/Team/team-1.png",
+        bio: "Atieh is a Building Analyst working for KAMSOL Elite Consultants from the beginning. She has Bachelor’s Degree in Industrial Engineering. She Has Master’s Degree in Engineering Management (MEM).",
         email: "atieh.madraki@kamsolappraisers.com",
         phone: "+1 (306) 807-1133"
     },
@@ -76,8 +75,8 @@ export const staffData = [
         id: 3,
         name: "Melika Ahmadi",
         position: "M.Eng",
-        image: "/images/team/team-2.png",
-        bio: "",
+        image: "/src/img/Team/team-2.png",
+        bio: "Melika is a Building Analyst working for KAMSOL Elite Consultants. She has Bachelor’s and Master’s Degree in Civil Engineering.",
         email: "melika.ahmadi@kamsolappraisers.com",
         phone: "+1 (306) 807-1133"
     },
@@ -86,8 +85,8 @@ export const staffData = [
         id: 4,
         name: "Mohsen Etemad",
         position: "M.Eng",
-        image: "/images/team/mohsen.jpg",
-        bio: "",
+        image: "src/img/team/mohsen.jpg",
+        bio: "Mohsen is a Building Analyst working for KAMSOL Elite Consultants.",
         email: "",
         phone: "+1 (306) 807-1133"
     },
@@ -96,13 +95,12 @@ export const staffData = [
         id: 5,
         name: "Sam Nezamloo",
         position: "M.Eng",
-        image: "/images/team/sam.jpg",
-        bio: "",
+        image: "/src/img/Team/sam.jpg",
+        bio: "Sam received his education in the Real Estate Division of Sauder School of Business in UBC (University of British Columbia). Sam has Bachelor of Science in Mechanical Engineering and his Master’s Degree in Industrial Systems Engineering from University of Regina. Sam has Professional Engineering Designation (P.Eng) with Association of Professional Engineers and Geoscientists of Saskatchewan (APEGS). He has demonstrated commitment to community through voluntary contributions in Saskatchewan in recent years.",
         email: "",
         phone: "+1 (306) 807-1133"
     }
 ];
-
 
 export const careersData = [
     {
