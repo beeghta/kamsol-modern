@@ -1,4 +1,4 @@
-\# Kamsol Website Modernization
+# Kamsol Website Modernization
 
 
 
@@ -6,7 +6,7 @@ A modern full-stack rebuild of a legacy PHP/MySQL website using React, Node.js, 
 
 
 
-\## Live Demo
+### Live Demo
 
 
 
@@ -14,7 +14,7 @@ A modern full-stack rebuild of a legacy PHP/MySQL website using React, Node.js, 
 
 
 
-\## About the Project
+### About the Project
 
 
 
@@ -30,11 +30,11 @@ The project also provides an admin dashboard for managing website content throug
 
 
 
-\## Technologies
+### Technologies
 
 
 
-\### Frontend
+#### Frontend
 
 \- React
 
@@ -50,7 +50,7 @@ The project also provides an admin dashboard for managing website content throug
 
 
 
-\### Backend
+#### Backend
 
 \- Node.js
 
@@ -64,7 +64,7 @@ The project also provides an admin dashboard for managing website content throug
 
 
 
-\### Development Tools
+#### Development Tools
 
 \- Git
 
@@ -74,7 +74,7 @@ The project also provides an admin dashboard for managing website content throug
 
 
 
-\## Project Structure
+#### Project Structure
 
 
 
@@ -102,31 +102,28 @@ kamsol-modern/
 
 └── database/
 
-&#x20;   └── database files
+\&#x20;   └── database files
+
+```
+
+**Features**
+
+\* Public Website
+\* Home page
+\* About page
+\* Services
+\* Real Estate Appraisal
+\* Building Condition Assessments
+\* Investment Analysis
+\* Professional Staff
+\* Careers
+\* Contact page
 
 
 
-\### Features
-
-* Public Website
-* Home page
-* About page
-* Services
-* Real Estate Appraisal
-* Building Condition Assessments
-* Investment Analysis
-* Professional Staff
-* Careers
-* Contact page
-
-
-
-\### Admin Dashboard
-
-
+**Admin Dashboard**
 
 The project includes an administration interface for managing website content.
-
 
 
 Current content management includes:
@@ -169,7 +166,7 @@ Examples include:
 
 
 
-\### Database
+**Database**
 
 
 
@@ -203,15 +200,15 @@ This project modernizes the application by introducing:
 
 Legacy PHP/MySQL
 
-&#x20;       ↓
+\&#x20;       ↓
 
 React Frontend
 
-&#x20;       +
+\&#x20;       +
 
 Node.js / Express API
 
-&#x20;       +
+\&#x20;       +
 
 MySQL Database
 
@@ -224,44 +221,42 @@ Development
 Install frontend
 
 
-
+```text
 cd client
 
 npm install
 
 npm run dev
 
-
+```
 
 Install backend 
 
 
-
+```text
 cd server
 
 npm install
 
 node index.js
 
-
+```
 
 The frontend runs through Vite and the backend provides the REST API.
 
 
 
-\### Future Improvements
+Future Improvements
 
-* Expand the content management system
-* Improve authentication and authorization
-* Further separate reusable content structures
-* Add additional automated testing
-* Improve deployment architecture
-
-
-
-\### License
+\* Expand the content management system
+\* Improve authentication and authorization
+\* Further separate reusable content structures
+\* Add additional automated testing
+\* Improve deployment architecture
 
 
+**License**
 
 This project is intended as a portfolio project.
+
 
