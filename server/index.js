@@ -1,4 +1,4 @@
-import express from "express";
+﻿import express from "express";
 import cors from "cors";
 import authRouter from "./routes/auth.js";
 import db from "./config/database.js";
@@ -28,7 +28,7 @@ app.use("/api/careers", careersRouter);
 app.use("/api/services", servicesRouter);
 app.use("/api/building-taxonomy", buildingTaxonomyRouter);
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 try {
     const connection = await db.getConnection();
@@ -39,6 +39,7 @@ try {
 } catch (error) {
     console.error("MySQL connection failed:", error.message);
 }
-app.listen(PORT, () => {
-    console.log(`Kamsol API running on http://localhost:${PORT}`);
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Kamsol API running on port ${PORT}`);
 });
