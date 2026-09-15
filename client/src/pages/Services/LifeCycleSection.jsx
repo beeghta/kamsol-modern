@@ -1,4 +1,4 @@
-function LifeCycleSection() {
+Ôªøfunction LifeCycleSection() {
     return (
         <section className="container-fluid pt-5 pb-2 bg-light">
             <span className="text-center col-lg-6 col-lg-offset-3">
@@ -38,7 +38,7 @@ function LifeCycleSection() {
                     implement a proper life-cycle maintenance practice for
                     replacing outdated building elements (which reached to the
                     end of their useful life). The dominant market practice
-                    for efficiency and sustainability in ìbuilding reliefî is
+                    for efficiency and sustainability in ‚Äúbuilding relief‚Äù is
                     to determine Facility Condition Index (FCI). The Facility
                     Condition Index (FCI) is an industry standard for
                     measuring facility condition which is used by most real
