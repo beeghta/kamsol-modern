@@ -1,11 +1,13 @@
 ﻿import { useState } from "react";
 import kamsolLogo from "../img/KAMSOL.jpg";
 import { Link } from "react-router-dom";
-function closeMenu() {
-    setMenuOpen(false);
-}
+
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+
+    function closeMenu() {
+        setMenuOpen(false);
+    }
 
     return (
         <nav className="navbar-top">
