@@ -29,7 +29,7 @@ function Navbar() {
                     <Link to="/about" onClick={closeMenu}>About Us</Link>
                 </li>
 
-                <li className="mega-drop-down" onClick={closeMenu}>
+                <li className="mega-drop-down">
                     <Link to="/services">Our Services</Link>
 
                     <div className="animated fadeIn mega-menu">
