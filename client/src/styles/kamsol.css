@@ -3649,6 +3649,7 @@ a.toggle-menu {
 @media (max-width: 767px) {
     .navbar-top {
         width: 100%;
+        overflow-x:hidden;
     }
     .status span {
         display: grid;
