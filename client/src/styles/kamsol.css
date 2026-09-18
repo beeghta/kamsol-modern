@@ -1,4 +1,4 @@
-
+﻿
 @font-face {
     font-family: 'FrankRuhlLibre-Light';
     src: url('../fonts/FrankRuhlLibre-Light.ttf');
@@ -3111,7 +3111,7 @@ footer {
         font-size: 12px;
         letter-spacing: 2px;
         text-transform: uppercase;
-        width: 50%;
+        width: 70%;
     }
 
         .gold-btn i {
@@ -3647,6 +3647,20 @@ a.toggle-menu {
 /* Mobile */
 
 @media (max-width: 767px) {
+    .navbar-top {
+        width: 100%;
+    }
+    .status span {
+        display: grid;
+        grid-auto-flow : column dense;
+        align-content: stretch;
+        align-items: baseline;
+        justify-content: start;
+    }
+        .bg-black {
+        position:relative;
+        display: flow-root;
+    }
     .taxonomy-header {
         padding: 45px 20px 30px;
     }

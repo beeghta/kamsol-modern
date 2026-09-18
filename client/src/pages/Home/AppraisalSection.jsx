@@ -48,7 +48,7 @@ function AppraisalSection() {
                     {content.description}
                 </p>
 
-                <div className="col-lg-12 col-xs-7 pt-5">
+                <div className="col-lg-12 col-xs-10 pt-5">
 
                     <a
                         href={content.button_link}

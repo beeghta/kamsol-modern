@@ -1,6 +1,9 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import kamsolLogo from "../img/KAMSOL.jpg";
 import { Link } from "react-router-dom";
+function closeMenu() {
+    setMenuOpen(false);
+}
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -17,14 +20,14 @@ function Navbar() {
                 </li>
 
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/" onClick={closeMenu}>Home</Link>
                 </li>
 
                 <li>
-                    <Link to="/about">About Us</Link>
+                    <Link to="/about" onClick={closeMenu}>About Us</Link>
                 </li>
 
-                <li className="mega-drop-down">
+                <li className="mega-drop-down" onClick={closeMenu}>
                     <Link to="/services">Our Services</Link>
 
                     <div className="animated fadeIn mega-menu">
@@ -32,15 +35,15 @@ function Navbar() {
                             <div className="col-lg-12">
                                 <ul className="stander">
                                     <li>
-                                        <Link className="link" to="/services/real-estate-appraisal">Real Estate Appraisal</Link>
+                                        <Link className="link" to="/services/real-estate-appraisal" onClick={closeMenu}>Real Estate Appraisal</Link>
                                     </li>
 
                                     <li>
-                                        <Link className="link" to="/services/building-condition-assessments">Building Condition Assessments</Link>
+                                        <Link className="link" to="/services/building-condition-assessments" onClick={closeMenu}>Building Condition Assessments</Link>
                                     </li>
 
                                     <li>
-                                        <Link className="link" to="/services/investment-analysis">Real Estate Investment Analysis,
+                                        <Link className="link" to="/services/investment-analysis" onClick={closeMenu}>Real Estate Investment Analysis,
                                             Proforma, and Sensitivity Analysis</Link>
                                     </li>
                                 </ul>
@@ -50,11 +53,11 @@ function Navbar() {
                 </li>
 
                 <li>
-                    <Link to="/careers">Careers</Link>
+                    <Link to="/careers" onClick={closeMenu}>Careers</Link>
                 </li>
 
                 <li>
-                    <Link to="/contact">Contact Us</Link>
+                    <Link to="/contact" onClick={closeMenu}>Contact Us</Link>
                 </li>
 
                 <li className="images-drop-down">
@@ -67,7 +70,7 @@ function Navbar() {
                 </li>
 
                 <li>
-                    <Link to="/professional-staff">Professional Staff</Link>
+                    <Link to="/professional-staff" onClick={closeMenu}>Professional Staff</Link>
                 </li>
 
                 <a
