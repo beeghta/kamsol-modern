@@ -3795,3 +3795,12 @@ a.toggle-menu {
         grid-template-columns: 1fr;
     }
 }
+@media (max-width: 768px) {
+    .mega-drop-down .mega-menu {
+        display: none;
+    }
+
+    .mega-drop-down.open .mega-menu {
+        display: block;
+    }
+}

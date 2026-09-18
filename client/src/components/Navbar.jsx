@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [servicesOpen, setServicesOpen] = useState(false);
 
     function closeMenu() {
         setMenuOpen(false);
+        setServicesOpen(false);
     }
 
     return (
@@ -29,8 +31,18 @@ function Navbar() {
                     <Link to="/about" onClick={closeMenu}>About Us</Link>
                 </li>
 
-                <li className="mega-drop-down">
-                    <Link to="/services">Our Services</Link>
+                <li className={`mega-drop-down ${servicesOpen ? "open" : ""}`}>
+                    <Link
+                        to="/services"
+                        onClick={(event) => {
+                            if (window.innerWidth <= 768) {
+                                event.preventDefault();
+                                setServicesOpen(!servicesOpen);
+                            }
+                        }}
+                    >
+                        Our Services
+                    </Link>
 
                     <div className="animated fadeIn mega-menu">
                         <div className="mega-menu-wrap">
